@@ -34,10 +34,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
     var crypto_store = Fabric_Client.newCryptoKeyStore({path: store_path});
     crypto_suite.setCryptoKeyStore(crypto_store);
     fabric_client.setCryptoSuite(crypto_suite);
-    var	tlsOptions = {
-    	trustedRoots: [],
-    	verify: false
-    };
+
     // be sure to change the http to https when the CA is running TLS enabled
     fabric_ca_client = new Fabric_CA_Client('http://localhost:7054', null , '', crypto_suite);
 
